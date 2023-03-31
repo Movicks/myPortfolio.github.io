@@ -1,0 +1,887 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.3s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.section {
+    position: relative;
+    min-height: 65vh;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url(img/codelab.jpg);
+}
+
+.content {
+    position: relative;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    background: purple;
+    align-items: center;
+    height: 50px;
+    z-index: 100;
+    box-shadow: 0.5rem 1rem rgba(169, 255, 179, 0.1);
+}
+
+header>.logo {
+    position: relative;
+    max-width: 250px;
+}
+
+header>ul {
+    position: relative;
+    display: flex;
+}
+
+label {
+    font-size: 3.5rem;
+    color: whitesmoke;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.logoSpan {
+    background: #fff;
+    color: purple;
+    font-size: 3rem;
+}
+
+.button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: none;
+    position: relative;
+    filter: invert(1);
+    display: none;
+}
+
+.home-img {
+    width: 45px;
+    height: 45px;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3.5rem;
+    color: #333;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.heading span {
+    color: purple;
+}
+
+@keyframes slideInFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+#slideIn{
+    /* this calls the slide from left animation */
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.aboutUs {
+    text-align: center;
+    font-size: 2rem;
+    padding: 0.1rem;
+    color: rgb(148, 137, 137);
+}
+
+.ul>li {
+    list-style: none;
+}
+
+.ul li>a {
+    display: inline-block;
+    color: whitesmoke;
+    font-weight: 400;
+    margin: 0 10px;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.ul li>a::before {
+    content: "";
+    width: 10%;
+    height: 20%;
+    position: absolute;
+    border-top: 2px solid rgb(219, 216, 216);
+    border-left: 2px solid rgb(219, 216, 216);
+    top: 0%;
+    left: 0%;
+    box-sizing: border-box;
+    /* transform-origin: left; */
+    transition: all 0.3s;
+}
+
+.ul li>a::after {
+    content: "";
+    width: 10%;
+    height: 20%;
+    position: absolute;
+    transition: all 0.3s;
+    /* transform-origin: left; */
+    border-bottom: 2px solid rgb(219, 216, 216);
+    border-right: 2px solid rgb(219, 216, 216);
+    box-sizing: border-box;
+    bottom: 0%;
+    right: 0%;
+}
+
+.ul li>a:hover::before,
+.ul li>a:hover:after {
+    width: 100%;
+    height: 100%;
+    /* transform: rotate(360deg); */
+}
+
+.textBox h2 {
+    font-size: 0.5rem;
+    color: whitesmoke;
+}
+
+.textBox span {
+    font-size: 1rem;
+    padding: 1.7rem 0;
+    line-height: 1.5;
+}
+
+.content>p {
+    font-size: 1.0rem;
+    color: black;
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
+    display: inline-block;
+    margin-top: 0.1rem;
+    padding: .3rem 1.0rem;
+    cursor: pointer;
+}
+
+.content h3 {
+    font-size: medium;
+}
+
+.textBox {
+    position: relative;
+    max-width: 600px;
+}
+
+.textBox h2 {
+    text-align: center;
+    font-size: 4em;
+    line-height: 1em;
+    padding-top: 2.5rem;
+    font-weight: 500;
+    background: rgba(128, 0, 128, 0.096);
+}
+
+.textBox h2 span {
+    color: purple;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.textBox p {
+    font-size: 1.7rem;
+    color: rgb(196, 192, 196);
+    padding: .5rem 0;
+    padding-top: 1.5rem;
+    line-height: 1.5;
+}
+
+.content .imgBox {
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 50px;
+}
+
+.content .imgBox img {
+    max-width: 340px;
+}
+
+.thumb {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.thumb li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.thumb li:hover {
+    transform: translateY(-40%);
+}
+
+.thumb li img {
+    width: 55px;
+    height: 55PX;
+    border-radius: 20%;
+}
+
+.sci {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+    filter: invert(1);
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: purple;
+    clip-path: circle(600px at right 800px);
+    color: rgb(43, 3, 3);
+}
+
+.navigation {
+    position: relative;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuToggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0);
+}
+
+.menuToggle::before {
+    content: '+';
+    position: absolute;
+    font-size: 3em;
+    font-weight: 200;
+    color: purple;
+    transition: 1.5s;
+}
+
+.menuToggle.active::before {
+    transform: rotate(225deg);
+}
+
+.menu {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(252, 249, 249, 0.952);
+    border-radius: 50px;
+    z-index: -1;
+    transition: transform 0.5s;
+    transition-delay: 0.5s, 0.5s, 0.5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    justify-content: center;
+    align-items: center;
+}
+
+.menuToggle.active~.menu {
+    width: 250px;
+    height: 35px;
+    z-index: 1;
+    transform: translateY(45px);
+    margin-right: 175px;
+    transition-delay: 0s, 0.5s, 0.5s;
+    box-shadow: 0 15px 25px solid gray;
+}
+
+.menuToggle.active~.menu::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: rgba(252, 249, 249, 0.952);
+    left: calc(85% - 8px);
+    top: 4px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    transition: 0.5s;
+}
+
+.menuToggle.active~.menu::before {
+    transition-delay: 0.1s, 0.5s, 0.5s;
+    top: -5px;
+}
+
+.menu>.ulli {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 40px;
+}
+
+.menu>.ulli li {
+    list-style: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+    transform: translateY(-30px);
+    transition-delay: calc(0.75s + var(--i));
+}
+
+.menuToggle.active~.menu .ulli li {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    transition-delay: calc(0.75s + var(--i));
+}
+
+.menu>.ulli li a {
+    display: block;
+    font-size: 1.5em;
+    color: purple;
+    font-weight: 600;
+}
+
+.menu>.ulli li:hover a {
+    color: rgb(43, 42, 42);
+}
+
+.mybtn{
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+}
+.cta{
+    font-weight: bold;
+    padding: 10px 40px;
+}
+.Hire{
+    border: 2px solid purple;
+    border-radius: 0.5rem;
+    background: black;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+.Hire:hover{
+    background-color: purple;
+    color: #fff;
+}
+
+.Pject{
+    border-radius: 0.5rem;
+    background: purple;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+.Pject:hover{
+    border: 2px solid purple;
+    background: black;
+    color: #fff;
+    transition: 0.7s;
+}
+
+@media(max-width:900px) {
+    html {
+        font-size: 55%;
+    }
+    .heading {
+        font-size: 2rem;
+    }
+    .ul li>a {
+        font-size: 1rem;
+        font-weight: bolder;
+    }
+}
+
+@media(max-width:768px) {
+    html {
+        font-size: 50%;
+        scroll-behavior: smooth;
+    }
+    .heading {
+        font-size: 3rem;
+    }
+
+    @keyframes slideInFromTop{
+        0%{
+            transform: translateY(-100%);
+        }
+        100%{
+            transform: translateY(0);
+        }
+    }
+    #slideIn{
+        /* this calls the slide from left animation */
+        animation: 1s ease-out 0s 1 slideInFromTop;
+    }
+    .content h3 {
+        font-size: 2.5rem;
+    }
+#onai{
+    display:none;
+}
+#onaiB{
+    color:white;
+}
+    .content span {
+        font-size: 2.5rem;
+    }
+    .ul li>a {
+        display: none;
+    }
+    .navigation {
+        display: flex;
+    }
+    .skill-wrapper{
+        display: block;
+        justify-content: center;
+        padding: 10px;
+    }
+    .skill-wrapper>img{
+        padding: 0.25rem;
+    }
+    .icon{
+        width: 10.875rem;
+        height: 10.25rem;
+    }
+    .icon-card{
+        background-color: #fff;
+        border-radius: 11px;
+        box-shadow: 0 3px 10px rgb(54, 53, 53);
+        padding: 10px;
+        margin: 5px;
+    }
+    header {
+        position: absolute;
+        top: 0;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        background: purple;
+        align-items: center;
+        height: 50px;
+        z-index: 1000;
+        box-shadow: 0.5rem 1rem rgba(169, 255, 179, 0.1);
+    }
+    .section {
+        padding-left: 8px;
+        padding-right: 8px;
+        display: flex;  
+    }
+    .sci>li>a>img{
+        display: none;
+    }
+
+    .Project-wrapper{
+        width: 95%;
+    }
+    #TickLine{
+        width: 5px;
+        height: 150px;
+    }
+
+    .Hire{
+        border: 2px solid black;
+        border-radius: 0.5rem;
+        background: white;
+        color: black;
+        padding: .9rem 3.5rem;
+        cursor: pointer;
+        font-size: 1.7rem;
+    }
+    .Hire:hover{
+        background-color: black;
+        color: #fff;
+    }
+    
+    .Pject{
+        border-radius: 0.5rem;
+        background: #000;
+        color: #fff;
+        padding: .9rem 3.5rem;
+        cursor: pointer;
+        font-size: 1.7rem;
+    }
+    .Pject:hover{
+        background: #fff;
+        color: #000;
+        transition: 0.7s;
+        border: 2px solid #000;
+    }
+    .thumb li img {
+        width: 38px;
+        height: 38PX;
+        border-radius: 10px;
+    }  
+}
+
+@media(max-width:450px) {
+    html {
+        font-size: 50%;
+        scroll-behavior: smooth;
+    }
+    .heading {
+        font-size: 3rem;
+    }
+    
+}
+
+/* about css */
+
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    padding-bottom: 3rem;
+    margin-left: 2rem;
+}
+
+.about .row .video-container {
+    flex: 1 1 20rem;
+    position: relative;
+    height: 30rem;
+    background: black;
+    overflow: hidden;
+}
+
+.about .row .video-container img {
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: 3rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    height: 95%;
+    object-fit: cover;
+}
+
+.about .row .video-container h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background: #fff;
+    width: 100%;
+    padding: 2rem 5rem;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+
+.about .row>.content {
+    flex: 1 1 40rem;
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    color: rgb(134, 130, 134);
+    padding: .5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+/* all button css*/
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: black;
+    color: #fff;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+    margin: 12px;
+}
+
+/* skills css */
+
+.Skills{
+    margin: auto;
+    text-align: center;
+    margin-top: 2.5rem;
+}
+.skill-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.skill-wrapper>img{
+    padding: 1.25rem;
+}
+.icon{
+    width: 11.875rem;
+    height: 11.25rem;
+}
+.icon-card{
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px rgb(54, 53, 53);
+    padding: 20px;
+    margin: 10px;
+}
+
+/* projects css */
+.Project{
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.Project-wrapper{
+    display: flex;
+    /* aspect-ratio: 2/4; */
+    margin: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 80%;
+    scroll-snap-type: x mandatory;
+    padding: 0 20px;
+    margin-left: calc(15%);
+    margin-right: calc(15%);
+}
+.Project-wrapper .animate_animated{
+    margin: 2px;
+    scroll-snap-align: center;
+}
+
+.project-pic{
+    width: 65%;
+    height: 60%;
+    border-radius: 10px;
+}
+.projects-title{
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: medium;
+}
+.project-container{
+    justify-content: center;
+    text-align: center;
+    width: 18.875rem;
+    padding: 1rem;
+}
+
+.project-container>p{
+    padding: 0.4rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgb(131, 127, 127);
+}
+.project-title{
+    margin-bottom: 0.5rem;
+}
+.project-details{
+    margin-bottom: 0.5rem; 
+}
+.project-card{
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow:  0 3px 10px rgb(54, 53, 53);
+    padding: 20px;
+    margin: 10px;
+}
+/* #TickLine{
+    width: 5px;
+    height: 290px;
+    font-size: xx-small;
+} */
+.project-link{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: black;
+    color: #fff;
+    padding: .5rem 2.5rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    margin: 1px;
+}
+
+/* contact css */
+
+.contact{
+    justify-content: center;
+    align-items: center;
+}
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact .row form {
+    flex: 1 1 40rem;
+    padding: 2rem 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgb(54, 53, 53);
+    margin: 8px;
+    background: #fff;
+    border-radius: .5rem;
+}
+
+.contact .row .image {
+    flex: 0.5 0.5 40rem;
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: 5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    height: 50%;
+    object-fit: cover;
+}
+
+.contact .row .image img {
+    width: 100%;
+    height: 50%;
+    border-radius: 5rem;
+}
+
+.contact .row form .box {
+    padding: 1rem;
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+    border: 0.5rem solid rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    margin: .7rem 0;
+    width: 100%;
+}
+.contact .row form #Name, #Email, #Subject{
+    height: 35px;
+    border: 0.2rem solid rgba(0, 0, 0, .1);
+    width: 100%;
+} 
+
+.contact .row form .box:focus {
+    border-color: var(--pink);
+}
+
+.contact .row form form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+/* footer css */
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.0rem;
+}
+
+.footer .box-container .box {
+    flex: 1 1 25rem;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 11px;
+    box-shadow: 0 3px 10px rgb(54, 53, 53);
+    margin: 8px;
+}
+
+.footer .box-container .box h3 {
+    color: #333;
+    font-size: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.footer .box-container .box a {
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 0.7rem 7px;
+}
+
+.footer .box-container .box a:hover {
+    color: rgb(226, 68, 247);
+}
+
+
+
+.footer .box-container .box img {
+    margin-top: 0.5rem;
+    width: 35px;
+    height: 35px;
+}
+
+.footer .credit {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color: #333;
+    border-top: 1rem solid rgba(0, 0, 0, 0.192);
+}
+
+.footer .credit span {
+    color: purple;
+}

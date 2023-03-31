@@ -1,0 +1,23 @@
+var Btn = document.getElementById('Btn');
+Btn.addEventListener('click', function(e){
+    var Name = document.getElementById('Name').value;
+    var email = document.getElementById('Email').value;
+    var subject = document.getElementById('Subject').value;
+    var message = document.getElementById('message').value;
+    var body = 'name: ' + Name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+    
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "codlabx@gmail.com",
+        Password: "emdeesilghlclysg",
+        To: 'codlabx@gmail.com',
+        From: email,
+        Subject: subject,
+        Body: body
+    }).then(
+        message => alert(message)
+    );
+
+    console.log(body);
+    e.preventDefault()
+})
